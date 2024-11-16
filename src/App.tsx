@@ -1,5 +1,5 @@
 function App() {
-  return <div>React typescript boilerplate</div>;
+  return <div>React + TypeScript + Vite Boilerplate</div>;
 }
 
 export default App;

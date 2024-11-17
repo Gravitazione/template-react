@@ -15,13 +15,17 @@
     "format": "prettier --write .",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.13.0",
     "@testing-library/react": "^16.0.1",
     "@types/node": "^22.9.0",
@@ -44,7 +48,9 @@
     "eslint-plugin-testing-library": "^6.4.0",
     "eslint-plugin-vitest": "^0.5.4",
     "globals": "^15.11.0",
+    "husky": "^9.1.6",
     "jsdom": "^25.0.1",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",

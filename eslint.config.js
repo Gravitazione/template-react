@@ -12,6 +12,7 @@ import prettier from 'eslint-plugin-prettier/recommended'
 import jest from 'eslint-plugin-jest'
 import testingLibrary from 'eslint-plugin-testing-library'
 import vitest from 'eslint-plugin-vitest'
+import storybook from 'eslint-plugin-storybook'
 
 export default tseslint.config(
   { ignores: ['dist', 'node_modules', 'public'] },
@@ -102,6 +103,22 @@ export default tseslint.config(
       'testing-library/no-dom-import': 'off',
       ...vitest.configs.recommended.rules,
       'vitest/max-nested-describe': ['error', { max: 3 }]
+    }
+  },
+  {
+    files: ['**/*.stories.{ts,tsx}', '**/*.story.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      prettier,
+      ...storybook.configs['flat/recommended']
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+    },
+    rules: {
+      ...storybook.configs.recommended.rules,
     }
   }
 )

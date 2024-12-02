@@ -69,6 +69,7 @@ export default tseslint.config(
         },
       ],
       '@typescript-eslint/no-unused-vars': ['error'],
+      'react/jsx-fragments': ['error', 'element']
     },
     settings: {
       react: {
